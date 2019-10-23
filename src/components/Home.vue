@@ -1,5 +1,6 @@
 <template>
  <div class="hello">
+  <h2>aiueo</h2>
   <h1>{{ msg }}</h1>
  </div>
 </template>
@@ -19,7 +20,7 @@ export default {
    this.msg = ''
   }
  },
- created () {
+ method () {
   axios.get('http://localhost:8888').then(res => {
    this.msg = res.data
   }).catch(err => {

@@ -1,20 +1,42 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <headerbar></headerbar>
+    <b-container class="bv-example-row" fluid>
+      <b-row>
+        <b-col cols="3">
+          <dashboard></dashboard>
+        </b-col>
+        <b-col cols="9">
+          <router-view/>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
+<script>
+import headerbar from '@/components/header/Header.vue'
+import dashboard from '@/components/dashboard/Dashboard.vue'
+
+export default {
+  name: 'App',
+  components: {
+    headerbar,
+    dashboard
+  },
+}
+</script>
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: #d9e1e8;
+}
+#app .container {
+  margin-left: 18.75rem;
+  padding-top: 1rem;
+  background: white;
+  max-height: 100%;
+  min-height: calc(100vh - 4.0625rem);
+  height: calc(100% - 4.0625rem);
 }
 #nav {
   padding: 30px;

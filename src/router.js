@@ -1,8 +1,16 @@
 import Vue from "vue";
+import BootstrapVue from "bootstrap-vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
+import Home from "./components/Home.vue";
+import About from "./components/about/About.vue";
+import Report from "./components/report/Report.vue";
+import Account from "./components/account/Account.vue";
 
 Vue.use(Router);
+Vue.use(BootstrapVue);
+
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 export default new Router({
   mode: "history",
@@ -16,11 +24,17 @@ export default new Router({
     {
       path: "/about",
       name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+      component: About
+    },
+    {
+      path: "/report",
+      name: "report",
+      component: Report
+    },
+    {
+      path: "/account",
+      name: "account",
+      component: Account
     }
   ]
 });
